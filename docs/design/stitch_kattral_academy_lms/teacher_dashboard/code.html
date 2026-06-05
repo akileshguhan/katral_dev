@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teacher Dashboard - Kattral Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#855300",
+                      "secondary-container": "#fea619",
+                      "surface-variant": "#d3e4fe",
+                      "inverse-primary": "#c3c0ff",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "tertiary": "#41485e",
+                      "on-primary-container": "#dad7ff",
+                      "on-tertiary-container": "#d4dbf5",
+                      "on-secondary-container": "#684000",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-dim": "#cbdbf5",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed": "#0f0069",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "on-surface": "#0b1c30",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "secondary-fixed": "#ffddb8",
+                      "outline": "#777587",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container": "#e5eeff",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#2a1700",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "primary-container": "#4f46e5",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "primary": "#3525cd",
+                      "surface-tint": "#4d44e3",
+                      "outline-variant": "#c7c4d8",
+                      "surface": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "inverse-on-surface": "#eaf1ff",
+                      "primary-fixed": "#e2dfff",
+                      "tertiary-fixed": "#dae2fd",
+                      "background": "#f8f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#586076",
+                      "on-surface-variant": "#464555",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed": "#131b2e",
+                      "surface-bright": "#f8f9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "sidebar-width": "280px",
+                      "section-gap": "64px",
+                      "margin-desktop": "32px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "display-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md">
+<!-- SideNavBar -->
+<nav aria-label="Sidebar Navigation" class="fixed left-0 top-0 h-full w-[280px] flex flex-col p-4 z-50 bg-surface-container-low hidden md:flex">
+<!-- Header -->
+<div class="flex items-center gap-4 mb-8 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold">
+<span class="material-symbols-outlined filled-icon">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-extrabold text-primary">Kattral Academy</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instructor Workspace</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="mb-6 w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-surface-tint transition-colors flex items-center justify-center gap-2 shadow-[0_4px_14px_0_rgba(79,70,229,0.39)]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            New Classroom
+        </button>
+<!-- Main Navigation Tabs -->
+<div class="flex flex-col gap-1 flex-grow">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-xl font-label-md text-label-md transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">school</span>
+                My Classrooms
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">live_tv</span>
+                Live Sessions
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Curriculum
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">leaderboard</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+</div>
+<!-- Footer Tabs -->
+<div class="flex flex-col gap-1 mt-auto pt-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-error hover:bg-error-container transition-all rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopAppBar (Mobile Only or Minimal Desktop) -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop h-16 z-40 bg-surface shadow-sm sticky top-0">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="md:hidden font-headline-lg text-headline-lg font-bold text-primary">Kattral Academy</div>
+</div>
+<div class="flex items-center gap-2">
+<!-- Search -->
+<div class="hidden sm:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline-variant/50 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-sm font-body-sm text-on-surface w-48 outline-none placeholder-on-surface-variant/70" placeholder="Search classrooms..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors hidden sm:block">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md ml-2 border border-outline-variant/30 cursor-pointer overflow-hidden">
+<img alt="Instructor Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a professional female teacher in a modern, well lit environment. Bright, optimistic corporate modern aesthetic. High quality corporate headshot photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoXk1Q7YZ6iuIH7vv4pQ3anVLh1nP1zzlUmEGy0ukIWMHbpKc5JRbVKYGT3mvyqWTpLZ78KwEq-cVkz60NFqTcLmHIbmP-EE74S2QgGD0W9OMWE2xr47owdRn82Mh92EbaQ6foC4ruFxRyqA14HuFs8xp1-7O3J16uy4_VZjISs-8govec91kr4a_TIefRfNQTu8qUwvv8bGv-hVG3qP0smEqum1gXG3RUgoKisVc7ccbzHLg8Zpr0TStXzKOINaPws_8pHpASD-4"/>
+</div>
+<button class="ml-2 hidden sm:flex items-center gap-1 bg-surface-container-high text-on-surface px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors">
+                    Join Class
+                </button>
+</div>
+</header>
+<div class="p-margin-mobile md:p-margin-desktop flex flex-col gap-gutter max-w-container-max mx-auto w-full">
+<!-- Page Header & Stats -->
+<div class="flex flex-col lg:flex-row gap-6 justify-between items-start lg:items-center">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Welcome back, Sarah!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Here is a quick overview of your teaching workspace today.</p>
+</div>
+<!-- Stat Strip (Bento-style) -->
+<div class="flex flex-wrap gap-4 w-full lg:w-auto">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.02)] flex-1 min-w-[140px] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Classrooms</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">8</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.02)] flex-1 min-w-[140px] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Total Students</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">246</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_0_rgba(0,0,0,0.02)] flex-1 min-w-[140px] flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-tertiary-container/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined">event</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sessions Today</p>
+<p class="font-headline-lg text-headline-lg text-on-surface">3</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Grid: Classroom Cards -->
+<div class="mt-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Active Classrooms</h3>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col group hover:shadow-[0_8px_30px_0_rgba(0,0,0,0.08)] transition-all">
+<div class="h-32 bg-primary relative p-4 flex flex-col justify-end">
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center backdrop-blur-sm hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-1 drop-shadow-md">Advanced Mathematics 301</h4>
+<p class="font-label-md text-label-md text-white/90">Fall Semester 2024</p>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Exploring complex calculus, linear algebra, and differential equations with practical applications in physics and engineering.</p>
+<div class="flex items-center justify-between mb-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">group</span>
+<span class="font-label-md text-label-md text-on-surface">32 Students</span>
+</div>
+<div class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 cursor-pointer hover:bg-surface-container-highest" title="Copy Invite Code">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    MATH-X9A
+                                </div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-low border border-outline-variant/50 text-primary font-label-md text-label-md rounded-lg hover:bg-surface-container hover:border-primary/50 transition-colors flex items-center justify-center gap-2">
+                                Open Classroom
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col group hover:shadow-[0_8px_30px_0_rgba(0,0,0,0.08)] transition-all">
+<div class="h-32 bg-secondary relative p-4 flex flex-col justify-end">
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center backdrop-blur-sm hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-1 drop-shadow-md">Intro to Computer Science</h4>
+<p class="font-label-md text-label-md text-white/90">Fall Semester 2024</p>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Fundamentals of programming using Python, basic algorithms, data structures, and computational thinking for beginners.</p>
+<div class="flex items-center justify-between mb-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">group</span>
+<span class="font-label-md text-label-md text-on-surface">45 Students</span>
+</div>
+<div class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 cursor-pointer hover:bg-surface-container-highest" title="Copy Invite Code">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    CS101-B2
+                                </div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-low border border-outline-variant/50 text-primary font-label-md text-label-md rounded-lg hover:bg-surface-container hover:border-primary/50 transition-colors flex items-center justify-center gap-2">
+                                Open Classroom
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_20px_0_rgba(0,0,0,0.05)] border border-outline-variant/20 flex flex-col group hover:shadow-[0_8px_30px_0_rgba(0,0,0,0.08)] transition-all">
+<div class="h-32 bg-tertiary relative p-4 flex flex-col justify-end">
+<div class="absolute top-4 right-4 flex gap-2">
+<button class="w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center backdrop-blur-sm hover:bg-black/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-white mb-1 drop-shadow-md">World History 101</h4>
+<p class="font-label-md text-label-md text-white/90">Fall Semester 2024</p>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">A comprehensive survey of major world civilizations, exploring cultural, political, and economic developments from antiquity to modern times.</p>
+<div class="flex items-center justify-between mb-6 mt-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">group</span>
+<span class="font-label-md text-label-md text-on-surface">28 Students</span>
+</div>
+<div class="bg-surface-container-high px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/30 flex items-center gap-1 cursor-pointer hover:bg-surface-container-highest" title="Copy Invite Code">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+                                    HIST-W1Z
+                                </div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-low border border-outline-variant/50 text-primary font-label-md text-label-md rounded-lg hover:bg-surface-container hover:border-primary/50 transition-colors flex items-center justify-center gap-2">
+                                Open Classroom
+                                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (Mobile Primary Action) -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-on-primary rounded-2xl shadow-[0_8px_16px_rgba(79,70,229,0.3)] flex items-center justify-center hover:bg-surface-tint hover:-translate-y-1 transition-all z-50">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</body></html>

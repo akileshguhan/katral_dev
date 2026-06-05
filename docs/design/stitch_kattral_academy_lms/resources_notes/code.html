@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduFlow - Resources</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Geist:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf8ff",
+                        "secondary-container": "#83fba5",
+                        "surface-tint": "#6042d6",
+                        "on-secondary-container": "#00743a",
+                        "surface-bright": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#00210c",
+                        "inverse-primary": "#cabeff",
+                        "outline-variant": "#c9c4d7",
+                        "on-surface": "#1a1b21",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2f3036",
+                        "surface-container-high": "#e8e7ef",
+                        "tertiary": "#7e2600",
+                        "surface-container-low": "#f4f3fb",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#484554",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eeedf5",
+                        "surface-container-highest": "#e2e2e9",
+                        "on-tertiary-fixed": "#380c00",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#a13a0f",
+                        "primary-fixed-dim": "#cabeff",
+                        "on-primary-fixed-variant": "#4723be",
+                        "surface-dim": "#dad9e1",
+                        "on-primary-container": "#d8ceff",
+                        "on-secondary-fixed-variant": "#005227",
+                        "surface-variant": "#e2e2e9",
+                        "secondary-fixed-dim": "#66dd8b",
+                        "primary-fixed": "#e6deff",
+                        "on-primary-fixed": "#1c0062",
+                        "inverse-on-surface": "#f1f0f8",
+                        "on-error": "#ffffff",
+                        "outline": "#797586",
+                        "primary-container": "#5d3fd3",
+                        "background": "#faf8ff",
+                        "secondary": "#006d36",
+                        "primary": "#451ebb",
+                        "on-tertiary-container": "#ffc8b6",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-tertiary-fixed-variant": "#822800",
+                        "secondary-fixed": "#83fba5",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1b21"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem"
+                    },
+                    "spacing": {
+                        "margin_mobile": "16px",
+                        "container_max_width": "1280px",
+                        "gutter": "24px",
+                        "base_unit": "8px",
+                        "margin_desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Geist"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #faf8ff; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 4px 20px rgba(93, 63, 211, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col bg-surface-container-lowest shadow-[0px_4px_20px_rgba(93,63,211,0.05)] fixed left-0 top-0 h-full w-64 z-50 pt-8 gap-2">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md">
+                E
+            </div>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary-container leading-tight">Learning Portal</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Academic Session 2024</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 mx-2 rounded-xl hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">grid_view</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 mx-2 rounded-xl hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">school</span>
+<span class="font-body-md text-body-md">My Classes</span>
+</a>
+<a class="bg-primary-container text-on-primary-container rounded-xl flex items-center gap-3 px-4 py-3 mx-2 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">library_books</span>
+<span class="font-body-md text-body-md font-bold">Resources</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 mx-2 rounded-xl hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 mx-2 mb-4">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label-sm text-label-sm py-3 rounded-lg flex justify-center items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Join Class with Code
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 relative min-h-screen pb-24 md:pb-8 pt-20 md:pt-8 px-margin_mobile md:px-margin_desktop max-w-container_max_width mx-auto w-full">
+<!-- Mobile TopAppBar Substitute -->
+<header class="md:hidden fixed top-0 left-0 w-full z-40 bg-surface/70 backdrop-blur-3xl border-b border-white/20 shadow-[0px_4px_20px_rgba(93,63,211,0.05)] flex justify-between items-center px-margin_mobile py-4">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary">EduFlow</span>
+<div class="flex gap-4 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+</header>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+<div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Resources</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and organize your learning materials.</p>
+</div>
+<button class="bg-gradient-to-r from-[#006d36] to-[#83fba5] text-white font-label-sm text-label-sm h-12 px-6 rounded-lg flex items-center gap-2 hover:shadow-lg transition-all transform active:scale-95 shrink-0">
+<span class="material-symbols-outlined">upload_file</span>
+                Upload Notes
+            </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Secondary Sidebar / Categories (Bento Left) -->
+<div class="lg:col-span-3 flex flex-col gap-6">
+<!-- Categories Card -->
+<div class="bg-white rounded-2xl p-6 shadow-[0px_4px_20px_rgba(93,63,211,0.05)] border border-white/20">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase">Categories</h3>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 p-2 rounded-lg bg-primary/5 text-primary font-body-md text-body-md font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+                                My Notes
+                            </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">folder_shared</span>
+                                Class Resources
+                            </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low font-body-md text-body-md transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">schedule</span>
+                                Recent Uploads
+                            </a>
+</li>
+</ul>
+</div>
+<!-- Storage Info -->
+<div class="glass-panel rounded-2xl p-6">
+<h3 class="font-label-sm text-label-sm text-on-surface-variant mb-4 uppercase">Storage</h3>
+<div class="mb-2 flex justify-between font-body-md text-body-md text-on-surface">
+<span>Used</span>
+<span class="font-bold">2.4 GB</span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[60%]"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-right">of 5.0 GB total</p>
+</div>
+</div>
+<!-- Main File Area (Bento Right) -->
+<div class="lg:col-span-9 flex flex-col gap-6">
+<!-- Folders Grid -->
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Subjects</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<!-- Folder Card 1 -->
+<div class="bg-white rounded-2xl p-5 shadow-[0px_4px_20px_rgba(93,63,211,0.05)] hover:shadow-md transition-shadow cursor-pointer flex items-center gap-4 border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-bold text-on-surface">Calculus 101</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">12 files</p>
+</div>
+</div>
+<!-- Folder Card 2 -->
+<div class="bg-white rounded-2xl p-5 shadow-[0px_4px_20px_rgba(93,63,211,0.05)] hover:shadow-md transition-shadow cursor-pointer flex items-center gap-4 border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/30 text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-bold text-on-surface">World History</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">8 files</p>
+</div>
+</div>
+<!-- Folder Card 3 -->
+<div class="bg-white rounded-2xl p-5 shadow-[0px_4px_20px_rgba(93,63,211,0.05)] hover:shadow-md transition-shadow cursor-pointer flex items-center gap-4 border border-transparent hover:border-primary/20">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md font-bold text-on-surface">Physics Lab</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">24 files</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Files List -->
+<div class="bg-white rounded-2xl shadow-[0px_4px_20px_rgba(93,63,211,0.05)] overflow-hidden flex-1 border border-white/20">
+<div class="p-6 border-b border-surface-container-highest flex justify-between items-center bg-surface/30">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Files</h3>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined">filter_list</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-colors"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+<div class="flex flex-col">
+<!-- File Row 1 -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors border-b border-surface-container-lowest last:border-0 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">Midterm_Study_Guide.pdf</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Calculus 101 • 2.4 MB</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 24, 2023</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm">Shared</span>
+<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">download</span></button>
+</div>
+<button class="md:hidden text-outline hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<!-- File Row 2 -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors border-b border-surface-container-lowest last:border-0 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">History_Essay_Draft.docx</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">World History • 145 KB</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 22, 2023</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Private</span>
+<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">download</span></button>
+</div>
+<button class="md:hidden text-outline hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+<!-- File Row 3 -->
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors border-b border-surface-container-lowest last:border-0 group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">image</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-md text-on-surface font-medium group-hover:text-primary transition-colors">Lab_Results_Chart.png</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Physics Lab • 1.1 MB</p>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 20, 2023</span>
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm">Shared</span>
+<button class="text-outline hover:text-primary transition-colors"><span class="material-symbols-outlined">download</span></button>
+</div>
+<button class="md:hidden text-outline hover:text-primary"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Mobile Nav (Only visible on mobile as part of ecosystem) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(93,63,211,0.05)] z-50 flex justify-around items-center h-16 pb-safe">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">grid_view</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-primary font-bold" href="#">
+<div class="bg-primary/10 px-4 py-1 rounded-full mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">library_books</span>
+</div>
+<span class="font-label-sm text-[10px]">Resources</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">school</span>
+<span class="font-label-sm text-[10px]">Classes</span>
+</a>
+</nav>
+</body></html>

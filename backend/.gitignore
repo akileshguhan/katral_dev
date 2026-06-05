@@ -1,0 +1,5 @@
+obj/
+bin/
+*.user
+appsettings.Development.json
+.env.production.example

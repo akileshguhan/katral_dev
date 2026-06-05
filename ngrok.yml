@@ -1,0 +1,10 @@
+version: "3"
+tunnels:
+  frontend:
+    addr: 3000
+    proto: http
+    domain: suprahepatic-unproportionably-chasity.ngrok-free.dev
+  plugnmeet:
+    addr: 8080
+    proto: http
+    # PlugNmeet needs its own tunnel so the iframe loads for external testers

@@ -1,0 +1,22 @@
+# Dependencies / build output
+node_modules/
+.next/
+backend/obj/
+backend/bin/
+
+# Secrets — never commit. Use the *.example templates instead.
+.env
+.env.local
+.env.*.local
+*.local
+
+# Backend config (contain real secrets locally) — copy from appsettings.json.example
+backend/EduPlatform.Api/appsettings.json
+backend/EduPlatform.Api/appsettings.Development.json
+backend/EduPlatform.Api/appsettings.Production.json
+
+# Legacy
+backend/TeachingPlatform.API/appsettings.Development.json
+
+# OS
+.DS_Store

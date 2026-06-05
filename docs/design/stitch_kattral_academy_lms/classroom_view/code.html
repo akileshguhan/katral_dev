@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kattral Academy - Classroom View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#855300",
+                      "secondary-container": "#fea619",
+                      "surface-variant": "#d3e4fe",
+                      "inverse-primary": "#c3c0ff",
+                      "on-secondary-fixed-variant": "#653e00",
+                      "tertiary": "#41485e",
+                      "on-primary-container": "#dad7ff",
+                      "on-tertiary-container": "#d4dbf5",
+                      "on-secondary-container": "#684000",
+                      "surface-container-highest": "#d3e4fe",
+                      "surface-dim": "#cbdbf5",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed": "#0f0069",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#c3c0ff",
+                      "on-surface": "#0b1c30",
+                      "on-primary-fixed-variant": "#3323cc",
+                      "secondary-fixed": "#ffddb8",
+                      "outline": "#777587",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container": "#e5eeff",
+                      "on-secondary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#2a1700",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "primary-container": "#4f46e5",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "primary": "#3525cd",
+                      "surface-tint": "#4d44e3",
+                      "outline-variant": "#c7c4d8",
+                      "surface": "#f8f9ff",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#ffb95f",
+                      "inverse-on-surface": "#eaf1ff",
+                      "primary-fixed": "#e2dfff",
+                      "tertiary-fixed": "#dae2fd",
+                      "background": "#f8f9ff",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "error": "#ba1a1a",
+                      "tertiary-container": "#586076",
+                      "on-surface-variant": "#464555",
+                      "surface-container-high": "#dce9ff",
+                      "on-tertiary-fixed": "#131b2e",
+                      "surface-bright": "#f8f9ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "sidebar-width": "280px",
+                      "section-gap": "64px",
+                      "margin-desktop": "32px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-xl": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "display-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                      "headline-lg": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for a cleaner look in specific containers, but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Ambient Background Pattern */
+        .bg-pattern {
+            background-image: radial-gradient(var(--tw-colors-outline-variant) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-color: var(--tw-colors-background);
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen w-full flex overflow-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- Global SideNavBar (Shared Component JSON Source of Truth) -->
+<nav class="hidden md:flex fixed left-0 top-0 h-full w-[280px] flex-col p-4 z-50 bg-surface-container-low dark:bg-surface-container-highest border-r border-outline-variant/30">
+<!-- Header -->
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">local_library</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-extrabold text-primary dark:text-inverse-primary truncate">Kattral Academy</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant truncate">Instructor Workspace</span>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full mb-6 bg-primary text-on-primary h-[44px] rounded-xl font-label-md text-label-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-sm hover:shadow-md active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]">add</span>
+            New Classroom
+        </button>
+<!-- Main Navigation -->
+<div class="flex-1 overflow-y-auto no-scrollbar flex flex-col gap-1">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+                Dashboard
+            </a>
+<!-- My Classrooms (ACTIVE STATE) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-xl font-label-md text-label-md shadow-sm scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">school</span>
+                My Classrooms
+            </a>
+<!-- Live Sessions (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">live_tv</span>
+                Live Sessions
+            </a>
+<!-- Curriculum (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                Curriculum
+            </a>
+<!-- Analytics (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">leaderboard</span>
+                Analytics
+            </a>
+<!-- Settings (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+</div>
+<!-- Footer Navigation -->
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-on-surface dark:hover:text-inverse-on-surface hover:bg-surface-container-high dark:hover:bg-surface-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden md:ml-[280px] relative z-10">
+<!-- Ambient Pattern Layer -->
+<div class="absolute inset-0 bg-pattern z-[-1]"></div>
+<!-- Classroom Header -->
+<header class="h-[80px] shrink-0 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 px-margin-desktop flex items-center justify-between z-20 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center border border-outline-variant/20 shadow-sm">
+<span class="material-symbols-outlined text-[24px] text-on-tertiary-fixed" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Advanced Frontend Architecture</h1>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+                            42 Students
+                        </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container border border-secondary-container/30 flex items-center gap-1">
+                            Invite Code: <strong class="font-bold tracking-wider">DEV-482A</strong>
+<button class="hover:text-primary transition-colors ml-1" title="Copy Code">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-10 px-4 rounded-lg bg-surface-container border border-outline-variant/50 font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">manage_accounts</span>
+                    Manage Class
+                </button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Bento Grid Layout for Classroom Space -->
+<div class="flex-1 flex overflow-hidden p-gutter gap-gutter max-w-container-max mx-auto w-full">
+<!-- Left Pane: Channels & Members (Inner Sidebar) -->
+<div class="w-[260px] shrink-0 flex flex-col gap-gutter overflow-y-auto no-scrollbar">
+<!-- Channels Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant/30 p-4 flex flex-col">
+<div class="flex items-center justify-between mb-3 px-2">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Channels</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<!-- Active Channel -->
+<button class="flex items-center gap-2 px-3 py-2 bg-surface-container border border-outline-variant/50 rounded-lg font-label-md text-label-md text-on-surface text-left">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tag</span>
+                            general
+                        </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors text-left group">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-tertiary transition-colors">campaign</span>
+                            announcements
+                        </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors text-left group">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-tertiary transition-colors">folder_zip</span>
+                            resources
+                        </button>
+<button class="flex items-center gap-2 px-3 py-2 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors text-left group">
+<span class="material-symbols-outlined text-[18px] text-outline group-hover:text-tertiary transition-colors">tag</span>
+                            project-discussion
+                        </button>
+</div>
+</div>
+<!-- Active Members Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-outline-variant/30 p-4 flex-1 flex flex-col min-h-[200px]">
+<div class="flex items-center justify-between mb-3 px-2">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Online — 4</h2>
+</div>
+<div class="flex flex-col gap-3 overflow-y-auto pr-2 no-scrollbar">
+<!-- Teacher -->
+<div class="flex items-center gap-3 px-2 group cursor-pointer">
+<div class="relative">
+<img alt="Profile picture of Sarah Jenkins, the lead instructor." class="w-8 h-8 rounded-full object-cover ring-2 ring-primary" data-alt="A professional headshot of a confident female instructor with glasses and a dark blazer, smiling warmly against a brightly lit modern office background. The lighting is soft and natural, emphasizing approachability and expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhJEY4X8cKlHATBuKmmZFq4-WtTROTGavgiySD9xuGLMUOsLrcB-TljCYQTlb72xubc2fwdRjL4Uo24Myhag10fNmGlN6ltNYRSWnw7h8UFAL4pgRRMNZRtYUOpC6ozXwrzKgvlZjN2gJvjPLM62v-vbYQnAhDVIohKdwF5cJhMAPtYKVZvxzK8AsXu564vi4Yq2Nn4bP1Y4CMy5RR646Alp7TXxsWR5nderFs7_L7zu4e-kkWccTxAJy3TxGCWmYF-sEY0ioiVGg"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">You</span>
+<span class="font-label-sm text-label-sm text-primary tracking-normal">Instructor</span>
+</div>
+</div>
+<!-- Students -->
+<div class="flex items-center gap-3 px-2 group cursor-pointer mt-2">
+<div class="relative">
+<img alt="Profile picture of student Marcus" class="w-8 h-8 rounded-full object-cover" data-alt="A casual portrait of a young male student in a bright yellow hoodie, looking attentively at a screen. The background is a slightly blurred, modern coffee shop or library setting with warm ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl9x6awYStVtMu9ucCgZLRgvvfMPx7Dkue2lL4ClOp4s80fXLfw4yowVkooF0GypXPhhU9SJeLe6LisajWPJGVbIX3pPoQIFzP16tD3jcTznEvm47zTwpqMaQw-70xfjRPo5S6qZ560iuiCd2TCRouu2G7UhUzbRcrpKUPaDwCvikv6BZ0ezrXlHpwGYoq9s9zlVO9rusvllTNYGD14q24ks2fD_tuJRW5nnNl15EfromfrwXKJg4hX0hemBtbZm5MCcnuogUBE-w"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Marcus T.</span>
+</div>
+<div class="flex items-center gap-3 px-2 group cursor-pointer">
+<div class="relative">
+<img alt="Profile picture of student Elena" class="w-8 h-8 rounded-full object-cover" data-alt="A portrait of a focused young female student with dark curly hair, wearing a simple white top. She is positioned in a bright, minimalist study area with soft natural window lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJpA42ug9NIAoxytD_SSRFukeZGqit7-fxtF-Kd45jZ2flVQdFTS41-cLDhGLfRmZoZAyX5iotfMLi8yZ2qy3EC5v71NCr117Lltbsj20NvEX2ZtNtQGW2N0MTRjJkAWrGdrHa5Tq2gz1JeO4-JjeQEUv5JBo2RnWua1rbOi0Zq9HjInaDFHumLyOtbufFwoXG_e6ACTbG9hDZzgCw5VuyyXpnSXN2_VsLuzYCRZLO0rsBCVFJVtKmIhG-_Wav6KhUBrVYe6hcsVs"/>
+<div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-secondary border-2 border-surface-container-lowest rounded-full"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Elena R.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Pane: Main Channel View (Chat/Board) -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.08)] border border-outline-variant/30 flex flex-col overflow-hidden relative">
+<!-- Channel Header -->
+<div class="h-[60px] border-b border-outline-variant/30 flex items-center justify-between px-6 bg-surface-container-lowest shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px] text-outline">tag</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">general</h2>
+<span class="w-1 h-1 rounded-full bg-outline-variant mx-2"></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">General discussion and Q&amp;A for the course.</p>
+</div>
+<div class="flex items-center gap-4 text-outline">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined">push_pin</span></button>
+</div>
+</div>
+<!-- Message List (Scrollable Area) -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6 bg-gradient-to-b from-transparent to-surface-container-low/20">
+<!-- Date Divider -->
+<div class="flex items-center justify-center my-2">
+<div class="h-px bg-outline-variant/30 flex-1"></div>
+<span class="px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider bg-surface-container-lowest rounded-full border border-outline-variant/20 shadow-sm py-1">Today</span>
+<div class="h-px bg-outline-variant/30 flex-1"></div>
+</div>
+<!-- Message from Student -->
+<div class="flex gap-4 group">
+<img alt="Student Marcus" class="w-10 h-10 rounded-lg object-cover shrink-0 mt-1 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTc3KVE6yce1yBXtQFYPKJN99UwiBjWjcmSai8I3_uMSJltPjfYt29NEBCeTLCHmpu8gGCLBgE_U_jk9W3RxmB4A-2nMjqZwvCuCHjLi4fiYcWQZypQbMQB8DdgifQrsKGzhjyHi60ph9xqPfRWSsS6-mOGYo_vCmnxvM_OlWVCQPrtl8oMeb3df4JyG6jVUv_y8IPisQfq89WrUrihaRRXEciDyYGAnfgRcGqjY3WGDbUb0qyHFajstPnCRV_8q9QxGIT76K_Q1E"/>
+<div class="flex flex-col gap-1 w-full max-w-3xl">
+<div class="flex items-baseline gap-2">
+<span class="font-label-md text-label-md text-on-surface">Marcus T.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70 text-[12px]">10:42 AM</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl rounded-tl-sm p-4 text-on-surface font-body-md shadow-sm">
+<p>Hi Professor, quick question about the assignment due next week. Are we supposed to implement the routing manually or can we use a library like React Router?</p>
+</div>
+<!-- Interaction Row (visible on hover) -->
+<div class="flex gap-2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">add_reaction</span></button>
+<button class="w-7 h-7 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">reply</span></button>
+</div>
+</div>
+</div>
+<!-- Message from Teacher (Self) -->
+<div class="flex gap-4 group flex-row-reverse">
+<img alt="Instructor Profile" class="w-10 h-10 rounded-lg object-cover shrink-0 mt-1 shadow-sm ring-2 ring-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXbaw1lq-ah4yCob2zBuGi6o_OKNkVFwuhzKiHwBCoE08RWOpcwB8msVT5hPzxFM8S-8YR10-okivDSlTq3kA2D1V5I1yuLuL7rrLJMbC_P_qcDeoRpFSO4DxOWjTDQ6-PQljrk-K70591CzMIlFTa6hD3ChIuialO8iyPZgqkLD994gfuBGE1H8ajiuoItrNL7aT_vFNg2O2X2CQtVLmWe36iEL1TpnlTRqrazX5daQC1mWL1qQ2EC_TIdbCXBvSNDSosAMJnPvI"/>
+<div class="flex flex-col gap-1 w-full max-w-3xl items-end">
+<div class="flex items-baseline gap-2 flex-row-reverse">
+<span class="font-label-md text-label-md text-on-surface">You</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant/70 text-[12px]">10:45 AM</span>
+</div>
+<div class="bg-primary-container text-on-primary-container border border-primary/20 rounded-2xl rounded-tr-sm p-4 font-body-md shadow-sm text-right">
+<p>Great question Marcus! For this specific module, I want you to build a rudimentary router from scratch using the History API so you understand the underlying mechanics. We'll move to React Router in Module 4.</p>
+<!-- Attached resource mockup -->
+<div class="mt-3 flex items-center gap-3 bg-surface-container-lowest/50 border border-primary/20 rounded-lg p-2 max-w-sm ml-auto text-left cursor-pointer hover:bg-surface-container-lowest/80 transition-colors">
+<div class="w-10 h-10 rounded bg-secondary-container/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">description</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-label-md text-label-md text-on-primary-container truncate">Routing_Basics_Guide.pdf</span>
+<span class="font-body-sm text-body-sm text-on-primary-container/70 text-[12px]">PDF Document • 2.4 MB</span>
+</div>
+</div>
+</div>
+<!-- Interaction Row -->
+<div class="flex gap-2 mt-1 opacity-0 group-hover:opacity-100 transition-opacity flex-row-reverse">
+<button class="w-7 h-7 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+</div>
+</div>
+<!-- System Message / Notice -->
+<div class="flex items-center justify-center my-4">
+<div class="px-4 py-2 bg-secondary-container/10 border border-secondary-container/30 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Elena R. joined the session.</span>
+</div>
+</div>
+</div>
+<!-- Message Input Area -->
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/30 shrink-0">
+<div class="bg-surface border border-outline-variant focus-within:border-primary rounded-xl overflow-hidden shadow-sm transition-colors relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-md text-on-surface placeholder:text-outline p-4 min-h-[56px] max-h-[150px]" placeholder="Message #general as Instructor..." rows="1"></textarea>
+<!-- Toolbar -->
+<div class="flex items-center justify-between px-3 pb-3">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Format Text">
+<span class="material-symbols-outlined text-[20px]">format_bold</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Attach File">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Emoji">
+<span class="material-symbols-outlined text-[20px]">mood</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline/50 hidden sm:inline-block mr-2">Markdown supported</span>
+<button class="h-9 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm hover:shadow-md hover:opacity-90 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Send
+                                    <span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Script for basic auto-resize textarea -->
+<script>
+        const tx = document.getElementsByTagName("textarea");
+        for (let i = 0; i < tx.length; i++) {
+          tx[i].setAttribute("style", "height:" + (tx[i].scrollHeight) + "px;overflow-y:hidden;");
+          tx[i].addEventListener("input", OnInput, false);
+        }
+
+        function OnInput() {
+          this.style.height = 0;
+          this.style.height = (this.scrollHeight) + "px";
+        }
+    </script>
+</body></html>

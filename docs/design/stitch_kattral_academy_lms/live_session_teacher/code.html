@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Session Room - Kattral Academy</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#855300",
+                        "secondary-container": "#fea619",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#c3c0ff",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "tertiary": "#41485e",
+                        "on-primary-container": "#dad7ff",
+                        "on-tertiary-container": "#d4dbf5",
+                        "on-secondary-container": "#684000",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed": "#0f0069",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "secondary-fixed": "#ffddb8",
+                        "outline": "#777587",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container": "#e5eeff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "primary-container": "#4f46e5",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "primary": "#3525cd",
+                        "surface-tint": "#4d44e3",
+                        "outline-variant": "#c7c4d8",
+                        "surface": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed": "#e2dfff",
+                        "tertiary-fixed": "#dae2fd",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#586076",
+                        "on-surface-variant": "#464555",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed": "#131b2e",
+                        "surface-bright": "#f8f9ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "sidebar-width": "280px",
+                        "section-gap": "64px",
+                        "margin-desktop": "32px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for chat */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #41485e; /* tertiary */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #586076; /* tertiary-container */
+        }
+    </style>
+</head>
+<body class="bg-inverse-surface text-inverse-on-surface h-screen w-screen overflow-hidden flex flex-col font-body-md selection:bg-primary selection:text-on-primary">
+<!-- Top Header (Task-focused, suppressed main nav) -->
+<header class="h-16 flex items-center justify-between px-6 border-b border-outline/20 shrink-0">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-tertiary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-inverse-on-surface">UX Design Principles - Week 3</h1>
+<p class="font-label-sm text-label-sm text-inverse-on-surface/70">12 Participants • Instructor View</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 bg-error-container text-on-error-container px-3 py-1.5 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] material-symbols-fill text-error">radio_button_checked</span>
+                REC 00:45:12
+            </div>
+<div class="h-6 w-px bg-outline/30"></div>
+<button class="p-2 rounded-full hover:bg-tertiary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface">settings</span>
+</button>
+<button class="p-2 rounded-full hover:bg-tertiary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-inverse-on-surface">more_vert</span>
+</button>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex overflow-hidden relative">
+<!-- Left: Video Grid & Whiteboard Canvas -->
+<section class="flex-1 flex flex-col p-4 gap-4 overflow-hidden">
+<!-- Participant Top Row (LiveKit Style) -->
+<div class="flex gap-4 h-32 overflow-x-auto shrink-0 pb-1">
+<!-- Instructor (Self) -->
+<div class="relative w-48 h-full bg-tertiary rounded-lg overflow-hidden border-2 border-primary ring-2 ring-primary/20 shrink-0 shadow-sm">
+<img alt="Instructor view" class="w-full h-full object-cover" data-alt="A high-quality webcam shot of a professional female instructor in a bright, modern home office. The lighting is soft and natural, emphasizing an authoritative yet accessible e-learning environment. The overall color palette is professional with subtle warm tones, fitting a corporate modern aesthetic. The mood is focused and attentive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5NXBfLoLGlFbf1qywLMMCl0ikdIHtImiHe-s20ZeGTVB3ZANV61GUHOxZ-axCZyEuoVZ9NTmzhur_4pSxjat_AtwfAoxXZ2iCyeoPByrMNMRV1FKK6T9pJrY3Huv9ZeH7rf0caVm0Mg9zhyCb1gn26Ixy-MhcqgxfnSU15uprQ9sEWPocgBzH2scYCPcRZbfMwxNg97MqQi9rFLjufnj_3kpAyofCMCDrK3oJr8JIpGbiyPROcXacbRWuh_hLoK-ofD_E4LF8eYU"/>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 backdrop-blur-md px-2 py-1 rounded font-label-sm text-label-sm text-inverse-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                        You
+                    </div>
+</div>
+<!-- Student 1 -->
+<div class="relative w-48 h-full bg-tertiary rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img alt="Student view" class="w-full h-full object-cover" data-alt="A high-quality webcam shot of a male student in a minimal, well-lit study room. The lighting is bright and clear, highlighting a dedicated e-learning setup. The aesthetic is clean and modern, relying on crisp whites and soft shadows. The mood is engaged and participating." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdQFfBaQp6TtRKtsfyZOSdFeN0mpZLgX_HSPXSI8_MAuaA3KKSa4KQvMZM1CFEzkP3CRYf4nNjLIIgnCllLWZloUdpVXf6Mb9LcZzePN2f3qbuqlF2eZGCjKFP10sVK4arcFOOx1AV1hczCkt3-vO1zfuxX85PupwrBTAsgZTWdNmf5S5t6NIbZ__vw4b_cOqQqivNV2MsdkyipGqZEGov2u1PId_ksegyv-1Xj-o9NCLxAFKHOP0ypEAY8sXIbTZV9Gt7DGjQ_Fc"/>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 backdrop-blur-md px-2 py-1 rounded font-label-sm text-label-sm text-inverse-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-error">mic_off</span>
+                        Marcus T.
+                    </div>
+</div>
+<!-- Student 2 -->
+<div class="relative w-48 h-full bg-tertiary rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img alt="Student view" class="w-full h-full object-cover" data-alt="A webcam perspective of a young woman attending an online class. She is in a cozy room with soft ambient lighting. The visual style is polished and clear, maintaining the organized intelligence theme of the UI. She looks directly at the camera with a neutral, focused expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNk5uUEAxYlPpdcheZatPR9WRAufBxo-pkneIhAW-mMV-pKV2_S6HSNZS0czWm9vC4lNSmgK97Q7VyMg3w4HLgwRv0ko4CgORwHzcdcQPuBTHcFvog_SuTttZJMNSQrENCkFulaqSak2ODDzW9PaH7_VRsVMfgG_i3CqX1_z62l6XCWrGcwnBeU1DFFjAMkJTRkWJv4SJlMzdnBazNJFuaZb-jjPvGdckmlQVu688faJ3Ytvj78tIzRyKXqRg7MTka82rfRijMOtQ"/>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 backdrop-blur-md px-2 py-1 rounded font-label-sm text-label-sm text-inverse-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-error">mic_off</span>
+                        Elena R.
+                    </div>
+</div>
+<!-- Student 3 (Video Off) -->
+<div class="relative w-48 h-full bg-tertiary rounded-lg overflow-hidden shrink-0 shadow-sm flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center font-headline-md text-headline-md text-on-tertiary-container">
+                        JS
+                    </div>
+<div class="absolute bottom-2 left-2 bg-inverse-surface/80 backdrop-blur-md px-2 py-1 rounded font-label-sm text-label-sm text-inverse-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-error">mic_off</span>
+                        James S.
+                    </div>
+</div>
+<!-- More participants indicator -->
+<button class="relative w-24 h-full bg-tertiary rounded-lg overflow-hidden shrink-0 shadow-sm flex items-center justify-center hover:bg-tertiary-container transition-colors group">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-inverse-on-surface group-hover:scale-110 transition-transform">grid_view</span>
+<span class="font-label-sm text-label-sm text-inverse-on-surface">+8 More</span>
+</div>
+</button>
+</div>
+<!-- Whiteboard Area -->
+<div class="flex-1 bg-surface rounded-xl relative overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)] border border-outline/10 flex">
+<!-- Whiteboard Toolbar (Left) -->
+<div class="w-14 bg-surface-container-lowest border-r border-outline/10 flex flex-col items-center py-4 gap-4 z-10 shadow-sm">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant group relative">
+<span class="material-symbols-outlined">near_me</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary-container text-on-primary-container transition-colors relative">
+<span class="material-symbols-outlined material-symbols-fill">draw</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant group relative">
+<span class="material-symbols-outlined">ink_eraser</span>
+</button>
+<div class="w-8 h-px bg-outline/20 my-1"></div>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant group relative">
+<span class="material-symbols-outlined">format_shapes</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant group relative">
+<span class="material-symbols-outlined">title</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant group relative">
+<span class="material-symbols-outlined">image</span>
+</button>
+<div class="w-8 h-px bg-outline/20 my-1"></div>
+<!-- Color Picker Indicator -->
+<button class="w-6 h-6 rounded-full bg-primary border-2 border-surface-container-lowest ring-1 ring-outline/30 mt-2 hover:scale-110 transition-transform"></button>
+</div>
+<!-- Whiteboard Canvas Content (Mockup) -->
+<div class="flex-1 relative bg-[radial-gradient(#e5eeff_1px,transparent_1px)] [background-size:24px_24px] bg-surface flex items-center justify-center">
+<!-- Drawn Element Mockups -->
+<div class="absolute top-20 left-32 w-64 p-4 bg-surface-container-lowest border-2 border-primary rounded-lg shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">User Journey</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Map out the initial touchpoints before onboarding.</p>
+</div>
+<!-- Arrow mock -->
+<div class="absolute top-28 left-[390px] w-24 h-0.5 bg-secondary-container relative">
+<div class="absolute -right-2 -top-[3px] w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-secondary-container border-b-4 border-b-transparent"></div>
+</div>
+<div class="absolute top-20 right-32 w-64 p-4 bg-secondary-fixed border-2 border-secondary rounded-lg shadow-sm transform rotate-2">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Pain Points</h3>
+<ul class="font-body-sm text-body-sm text-on-surface-variant list-disc pl-4">
+<li>Too many steps</li>
+<li>Unclear CTA</li>
+</ul>
+</div>
+<!-- Drawing path mock -->
+<svg class="absolute top-0 left-0 w-full h-full pointer-events-none" fill="none" viewbox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<path d="M 250 400 Q 350 350 450 420 T 650 380" stroke="#3525cd" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<path d="M 630 360 L 660 375 L 635 400" stroke="#3525cd" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+</svg>
+<!-- Instructor cursor mock -->
+<div class="absolute top-[380px] left-[650px] flex items-center gap-2 pointer-events-none">
+<span class="material-symbols-outlined text-primary text-[20px] transform -scale-x-100 rotate-12">ads_click</span>
+<div class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full shadow-sm">Instructor</div>
+</div>
+</div>
+<!-- Zoom Controls -->
+<div class="absolute bottom-4 right-4 flex items-center bg-surface-container-lowest rounded-lg shadow-sm border border-outline/10 overflow-hidden">
+<button class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<div class="px-2 font-label-sm text-label-sm text-on-surface-variant">100%</div>
+<button class="w-8 h-8 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Right: In-Session Chat Panel -->
+<aside class="w-[320px] bg-tertiary border-l border-outline/20 flex flex-col shrink-0 h-full z-20">
+<!-- Chat Header -->
+<div class="h-14 px-4 flex items-center justify-between border-b border-outline/20 shrink-0">
+<h2 class="font-headline-md text-headline-md text-on-tertiary">Session Chat</h2>
+<div class="flex gap-2">
+<button class="p-1.5 rounded-full hover:bg-tertiary-container text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</button>
+<button class="p-1.5 rounded-full hover:bg-tertiary-container text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Messages Area -->
+<div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
+<!-- System Message -->
+<div class="text-center font-label-sm text-label-sm text-on-tertiary/60 my-2">
+                    Session recording started
+                </div>
+<!-- Student Message -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-[10px]">ER</div>
+<span class="font-label-sm text-label-sm text-on-tertiary/80">Elena R.</span>
+<span class="font-label-sm text-[10px] text-on-tertiary/50">10:42 AM</span>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container p-3 rounded-2xl rounded-tl-sm font-body-sm text-body-sm w-fit max-w-[90%] shadow-sm">
+                        Are we focusing on mobile or desktop touchpoints for this exercise?
+                    </div>
+</div>
+<!-- Student Message -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-[10px]">MT</div>
+<span class="font-label-sm text-label-sm text-on-tertiary/80">Marcus T.</span>
+<span class="font-label-sm text-[10px] text-on-tertiary/50">10:43 AM</span>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container p-3 rounded-2xl rounded-tl-sm font-body-sm text-body-sm w-fit max-w-[90%] shadow-sm">
+                        I think both, but starting with mobile usually helps constrain the features.
+                    </div>
+</div>
+<!-- Instructor Message (Self) -->
+<div class="flex flex-col gap-1 items-end">
+<div class="flex items-center gap-2 flex-row-reverse">
+<div class="w-6 h-6 rounded-full bg-surface text-on-surface flex items-center justify-center font-label-sm text-[10px]">You</div>
+<span class="font-label-sm text-label-sm text-on-tertiary/80">Instructor</span>
+<span class="font-label-sm text-[10px] text-on-tertiary/50">10:45 AM</span>
+</div>
+<div class="bg-primary text-on-primary p-3 rounded-2xl rounded-tr-sm font-body-sm text-body-sm w-fit max-w-[90%] shadow-sm">
+                        Exactly Marcus. Let's map out the mobile journey first on the board.
+                    </div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-4 border-t border-outline/20 bg-tertiary shrink-0">
+<div class="relative flex items-center bg-inverse-surface rounded-xl border border-outline/30 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<input class="w-full bg-transparent border-none text-inverse-on-surface font-body-sm text-body-sm placeholder-inverse-on-surface/50 rounded-xl py-3 pl-4 pr-12 focus:ring-0" placeholder="Type message to everyone..." type="text"/>
+<button class="absolute right-2 p-1.5 rounded-lg text-primary hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-[20px] material-symbols-fill">send</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Floating Control Bar -->
+<div class="absolute bottom-6 left-1/2 -translate-x-[60%] lg:-translate-x-1/2 flex items-center gap-3 bg-tertiary p-2 rounded-full shadow-[0px_10px_30px_rgba(0,0,0,0.2)] border border-outline/20 z-50 transition-transform hover:-translate-y-1 duration-200">
+<!-- Mic (Unmuted) -->
+<button class="w-12 h-12 rounded-full bg-surface-container-highest hover:bg-surface-variant text-on-surface transition-colors flex items-center justify-center group" title="Mute Microphone">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+</button>
+<!-- Camera (On) -->
+<button class="w-12 h-12 rounded-full bg-surface-container-highest hover:bg-surface-variant text-on-surface transition-colors flex items-center justify-center group" title="Stop Video">
+<span class="material-symbols-outlined text-[24px]">videocam</span>
+</button>
+<!-- Screen Share (Off) -->
+<button class="w-12 h-12 rounded-full bg-tertiary-container hover:bg-tertiary-fixed text-on-tertiary-container hover:text-on-tertiary-fixed transition-colors flex items-center justify-center group" title="Share Screen">
+<span class="material-symbols-outlined text-[24px]">screen_share</span>
+</button>
+<!-- Whiteboard (Active state, distinct styling) -->
+<button class="w-12 h-12 rounded-full bg-primary text-on-primary transition-colors flex items-center justify-center shadow-inner group relative" title="Close Whiteboard">
+<span class="material-symbols-outlined text-[24px] material-symbols-fill">co_present</span>
+<!-- Active dot indicator -->
+<span class="absolute top-0 right-0 w-3 h-3 bg-secondary-container border-2 border-tertiary rounded-full"></span>
+</button>
+<div class="w-px h-8 bg-outline/30 mx-1"></div>
+<!-- Reactions / More -->
+<button class="w-12 h-12 rounded-full hover:bg-tertiary-container text-on-tertiary transition-colors flex items-center justify-center group" title="Reactions">
+<span class="material-symbols-outlined text-[24px]">mood</span>
+</button>
+<!-- End Call (Red) -->
+<button class="h-12 px-6 ml-2 rounded-full bg-error hover:bg-on-error-container text-on-error font-label-md text-label-md transition-colors flex items-center justify-center gap-2 shadow-sm" title="End Session">
+<span class="material-symbols-outlined text-[20px]">call_end</span>
+                End Class
+            </button>
+</div>
+</main>
+</body></html>

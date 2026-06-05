@@ -1,0 +1,23 @@
+{
+  "MongoDB": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "kattral_academy"
+  },
+  "Jwt": {
+    "Secret": "YOUR_JWT_SECRET_AT_LEAST_32_CHARS",
+    "Issuer": "kattral-api",
+    "ExpiryHours": "720"
+  },
+  "LiveKit": {
+    "ApiKey": "YOUR_LIVEKIT_API_KEY",
+    "ApiSecret": "YOUR_LIVEKIT_API_SECRET",
+    "Url": "wss://your-project.livekit.cloud"
+  },
+  "Google": {
+    "ClientId": "YOUR_GOOGLE_CLIENT_ID"
+  },
+  "Logging": {
+    "LogLevel": { "Default": "Information", "Microsoft.AspNetCore": "Warning" }
+  },
+  "AllowedHosts": "*"
+}
