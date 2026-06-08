@@ -25,9 +25,12 @@ sessions with real-time video, screen sharing, and chat.
 │   └── edu-web/                # Next.js application
 ├── docs/                       # Architecture notes and design references
 ├── docker-compose.yml          # MongoDB service
-├── start.sh                    # Run the whole stack locally
-├── share.sh                    # Run locally and expose the frontend via ngrok
-└── ngrok.yml                   # ngrok tunnel config (used by share.sh)
+├── start.sh                    # Run the whole stack locally (macOS/Linux)
+├── start.bat                   # Run the whole stack locally (Windows)
+├── share.sh                    # Run locally and expose the frontend via ngrok (macOS/Linux)
+├── share.bat                   # Run locally and expose the frontend via ngrok (Windows)
+├── stop.bat                    # Stop all running services (Windows)
+└── ngrok.yml                   # ngrok tunnel config (used by share.sh / share.bat)
 ```
 
 ## Prerequisites
@@ -87,12 +90,20 @@ to `http://localhost:5261`), so no separate API URL is required for local runs.
 
 After configuring both files above:
 
+**macOS / Linux:**
 ```bash
 ./start.sh
 ```
 
+**Windows:**
+```bat
+start.bat
+```
+
 This starts MongoDB (via Docker), the .NET backend, and the Next.js dev server,
-then prints the URLs. Press `Ctrl+C` to stop everything.
+then prints the URLs. On macOS/Linux, press `Ctrl+C` to stop everything. On
+Windows, close the terminal windows that open for the backend and frontend, then
+run `stop.bat` to free ports and tear down MongoDB.
 
 | Service  | URL                       |
 | -------- | ------------------------- |
@@ -100,11 +111,13 @@ then prints the URLs. Press `Ctrl+C` to stop everything.
 | Backend  | http://localhost:5261     |
 | MongoDB  | mongodb://localhost:27017 |
 
-Logs are written to `/tmp/backend-dev.log` and `/tmp/frontend-dev.log`.
+On macOS/Linux, logs are written to `/tmp/backend-dev.log` and
+`/tmp/frontend-dev.log`. On Windows, each service runs in its own terminal
+window with live output.
 
 ### Running the services manually
 
-If you prefer separate terminals instead of `start.sh`:
+If you prefer separate terminals instead of the start scripts:
 
 ```bash
 # 1. MongoDB
@@ -122,14 +135,48 @@ npm run dev
 
 ## Sharing for external testing
 
-`share.sh` runs the stack and exposes the frontend through an ngrok tunnel so
-others can reach it. It requires [ngrok](https://ngrok.com) to be installed and
-authenticated, and the public URL must be added to your Google OAuth client's
-authorized origins and redirect URIs.
+`share.sh` (macOS/Linux) and `share.bat` (Windows) run the stack and expose the
+frontend through an ngrok tunnel so others can reach it. Both require
+[ngrok](https://ngrok.com) to be installed and authenticated, and the public URL
+must be added to your Google OAuth client's authorized origins and redirect URIs.
 
+**macOS / Linux:**
 ```bash
 ./share.sh
 ```
+
+**Windows:**
+```bat
+share.bat
+```
+
+Both scripts will print the public ngrok URL and the exact OAuth entries you need
+to add to the Google Cloud Console.
+
+### ngrok config location (Windows)
+
+The Windows script looks for your global ngrok config in the default locations:
+
+- `%USERPROFILE%\AppData\Local\ngrok\ngrok.yml` (ngrok v3)
+- `%USERPROFILE%\.ngrok2\ngrok.yml` (ngrok v2)
+
+If your config is elsewhere, update the `NGROK_GLOBAL_CFG` line near the top of
+`share.bat`. You can find the correct path by running:
+
+```bat
+ngrok config check
+```
+
+### Stopping the share session (Windows)
+
+Close the Backend and Frontend terminal windows, then run:
+
+```bat
+stop.bat
+```
+
+This kills any processes still on ports 3000 and 5261 and brings down the
+MongoDB container.
 
 ## Running tests
 
